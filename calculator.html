@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+	<html>
+	<head>
+		<title>Calculator</title><meta charset="utf-8">
+			<style>
+				#buttonCube{
+					color:red;
+					cursor:pointer;
+				}
+				#n1{
+					
+					
+				}
+
+			</style>
+			<script type="text/javascript">
+
+				function cube() {
+					var num = document.getElementById("n1");
+					if(num.value!=""){
+						num.value = Math.pow(num.value, 3);
+					}
+				}
+				function onChangeValue(evt) {
+					var valor = document.getElementById("n1");
+					if(isNaN(evt.key)){
+						 valor.title = "No se aceptan valores alfanuméricos";
+					}
+				}
+				function onlyNum(evt){
+					if(window.event){//asignamos el valor de la tecla a keynum
+						keynum = evt.keyCode; //IE
+					}else{
+						keynum = evt.which; //FF
+					} 
+					 //comprobamos si se encuentra en el rango numérico y que teclas no recibirá.
+					 if((keynum > 47 && keynum < 58) || keynum == 8 || keynum == 13 || keynum == 6 ){
+					  return true;
+					 }else{
+						return false;
+					 }
+				}
+			</script>
+	</head>
+	<body>
+		Number:
+		<input type="text" id="n1" type="number" pattern="[0-9]{3}" placeholder="Introduzca un número" onKeyPress="return onlyNum(event);"><p>
+		<!-- <input type="text" id="n1" type="number" pattern="[0-9]{3}" placeholder="Introduzca un número" onKeyPress="return onChangeValue(event);"><p> -->
+		<button id= "buttonCube" onclick="cube()" type="submit"> x^3 </button>
+	</body>
+	<h1>Calculadora de ……Diana Martín Álvarez……</h1>
+</html>
