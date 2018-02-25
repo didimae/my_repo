@@ -3,13 +3,35 @@
 	<head>
 		<title>Calculator</title><meta charset="utf-8">
 			<style>
-				#buttonCube{
-					color:red;
-					cursor:pointer;
+				.buttonStyle{
+					text-decoration: none;
+					padding: 10px;
+					font-weight: 600;
+					font-size: 20px;
+					color: #ffffff;
+					background-color: #1883ba;
+					border-radius: 6px;
+					border: 2px solid #0016b0;
+				}
+				
+				.buttonStyle:hover{
+					color: #1883ba;
+					background-color: #ffffff;
 				}
 				#n1{
+					border: 2px solid #0016b0;
+					border-radius: 0;
+					-webkit-appearance: none;
 					
+				}
+				#r1{
+					border: 2px dotted #0016b0;
+					border-radius: 0;
+					-webkit-appearance: none;
 					
+				}
+				h1{
+					color: #1883ba;
 				}
 
 			</style>
@@ -17,16 +39,27 @@
 
 				function cube() {
 					var num = document.getElementById("n1");
+					var result = document.getElementById("r1");
 					if(num.value!=""){
-						num.value = Math.pow(num.value, 3);
+						result.value = Math.pow(num.value, 3);
 					}
 				}
+				
+				function fourth() {
+					var num = document.getElementById("n1");
+					var result = document.getElementById("r1");
+					if(num.value!=""){
+						result.value = Math.pow(num.value, 4);
+					}
+				}
+				
 				function onChangeValue(evt) {
 					var valor = document.getElementById("n1");
 					if(isNaN(evt.key)){
 						 valor.title = "No se aceptan valores alfanuméricos";
 					}
 				}
+				
 				function onlyNum(evt){
 					if(window.event){//asignamos el valor de la tecla a keynum
 						keynum = evt.keyCode; //IE
@@ -43,10 +76,10 @@
 			</script>
 	</head>
 	<body>
-		Number:
+		<h1>Calculadora de ……Diana Martín Álvarez……</h1>
 		<input type="text" id="n1" type="number" pattern="[0-9]{3}" placeholder="Introduzca un número" onKeyPress="return onlyNum(event);"><p>
-		<!-- <input type="text" id="n1" type="number" pattern="[0-9]{3}" placeholder="Introduzca un número" onKeyPress="return onChangeValue(event);"><p> -->
-		<button id= "buttonCube" onclick="cube()" type="submit"> x^3 </button>
+		<input type="text" id="r1" type="number" placeholder="Resultado"><p>
+		<button id= "buttonCube" onclick="cube()" class="buttonStyle" type="submit"> x^3 </button>
+		<button id= "buttonFourth" onclick="fourth()" class="buttonStyle" type="submit"> x^4 </button>
 	</body>
-	<h1>Calculadora de ……Diana Martín Álvarez……</h1>
 </html>
