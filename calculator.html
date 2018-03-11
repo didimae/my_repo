@@ -21,6 +21,12 @@
 						num.value = Math.pow(num.value, 3);
 					}
 				}
+				function sine(){
+					var num = document.getElementById("n1");
+					if(num.value!=""){
+						num.value = Math.sin(num.value);
+					}
+				}				
 				function onChangeValue(evt) {
 					var valor = document.getElementById("n1");
 					if(isNaN(evt.key)){
@@ -34,7 +40,7 @@
 						keynum = evt.which; //FF
 					} 
 					 //comprobamos si se encuentra en el rango numérico y que teclas no recibirá.
-					 if((keynum > 47 && keynum < 58) || keynum == 8 || keynum == 13 || keynum == 6 ){
+					 if((keynum > 47 && keynum < 58) || keynum == 45 || keynum == 8 || keynum == 13 || keynum == 6 ){
 					  return true;
 					 }else{
 						return false;
@@ -47,6 +53,7 @@
 		<input type="text" id="n1" type="number" pattern="[0-9]{3}" placeholder="Introduzca un número" onKeyPress="return onlyNum(event);"><p>
 		<!-- <input type="text" id="n1" type="number" pattern="[0-9]{3}" placeholder="Introduzca un número" onKeyPress="return onChangeValue(event);"><p> -->
 		<button id= "buttonCube" onclick="cube()" type="submit"> x^3 </button>
+		<button id= "buttonSine" onclick="sine()" type="submit"> Sin </button>
 	</body>
 	<h1>Calculadora de ……Diana Martín Álvarez……</h1>
 </html>
