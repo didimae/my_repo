@@ -52,16 +52,13 @@
 						result.value = Math.pow(num.value, 4);
 					}
 				}
-<<<<<<< HEAD
 				function sine(){
 					var num = document.getElementById("n1");
 					if(num.value!=""){
 						num.value = Math.sin(num.value);
 					}
 				}				
-=======
-				
->>>>>>> master
+
 				function onChangeValue(evt) {
 					var valor = document.getElementById("n1");
 					if(isNaN(evt.key)){
@@ -87,14 +84,9 @@
 	<body>
 		<h1>Calculadora de ……Diana Martín Álvarez……</h1>
 		<input type="text" id="n1" type="number" pattern="[0-9]{3}" placeholder="Introduzca un número" onKeyPress="return onlyNum(event);"><p>
-<<<<<<< HEAD
-		<!-- <input type="text" id="n1" type="number" pattern="[0-9]{3}" placeholder="Introduzca un número" onKeyPress="return onChangeValue(event);"><p> -->
-		<button id= "buttonCube" onclick="cube()" type="submit"> x^3 </button>
-		<button id= "buttonSine" onclick="sine()" type="submit"> Sin </button>
-=======
 		<input type="text" id="r1" type="number" placeholder="Resultado"><p>
 		<button id= "buttonCube" onclick="cube()" class="buttonStyle" type="submit"> x^3 </button>
 		<button id= "buttonFourth" onclick="fourth()" class="buttonStyle" type="submit"> x^4 </button>
->>>>>>> master
+		<button id= "buttonSine" onclick="sine()" class="buttonStyle" type="submit"> Sin </button>
 	</body>
 </html>
